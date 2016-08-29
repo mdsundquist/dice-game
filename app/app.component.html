@@ -1,0 +1,23 @@
+<div id=appWrapper>
+    <div id=appHeader>
+        <img src="./images/angular-shield-sm.png" id="ngImage">
+        <span id="appTitleText"><h1>Angular<sup>2</sup> {{title}}</h1></span>
+    </div>
+    <div id="diceDiv">
+        <dice-d6></dice-d6>
+        <dice-d6></dice-d6>
+        <dice-d6></dice-d6>
+        <dice-d6></dice-d6>
+        <dice-d6></dice-d6>
+        <div id="topBtnsDiv">
+            <button class = "btn-primary" (click)="onRollClick()" id="rollBtn">ROLL</button>
+            <button (click)="onNextTurnClick()" [ngClass]="turnBtnClass" [disabled]="firstRoll" id="newTurnBtn">Next Turn</button>
+        </div>
+    </div>
+    <div id="messagesDiv">
+        <dice-messages></dice-messages>
+    </div>
+    <div id="scorecardDiv">
+        <dice-scorecard></dice-scorecard>
+    </div>
+</div>

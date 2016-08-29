@@ -1,0 +1,4 @@
+<div class="diceCell">
+    <div [id]="'canvas-' + id" class="canvas" #dieCanvas></div>
+    <button [ngClass]="holdClass" [disabled]="holdDisabled" (click)="toggleHold()" [id]="'holdBtn-' + id" #holdBtn>Hold</button>
+</div>
