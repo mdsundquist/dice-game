@@ -50,6 +50,14 @@ constructor(private rollService: DieRollService, private turnService: TurnServic
               else if (data === 3) this.displayMsg = this.messages.beforeRollThree;
           }
       );
+      this.turnService.newTurnEvent.subscribe(
+          data => {
+              if (data) {
+                  this.rollNumber = 1;
+                  this.displayMsg = this.messages.beforeRollOne;
+              }
+          }
+      )
       this.rollService.rollFinishedEvent.subscribe(
           data => {
               if (data) {
