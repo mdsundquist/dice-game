@@ -1,0 +1,181 @@
+<h3>{{title}}</h3>
+<form (ngSubmit)="onSubmit(scoreForm)" #scoreForm="ngForm">
+<div id="upperScoreDiv">
+    <table id="upperScoreTbl">
+        <colgroup>
+            <col class="labelCol"/>
+            <col class="valueCol"/>
+            <col class="scoreCol"/>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Left Section</th>
+            <th>Value</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="scoreAces">Aces</label></td>
+                <td>
+                    <span class="valueSpan">Add up </span>
+                    <img src="../images/d6-1.png" class="scoreDiceImg">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="scoreAces" [(ngModel)]="score.aces" name="scoreAces" pattern="^[0-5]">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreTwos">Twos</label></td>
+                <td>
+                    <span class="valueSpan">Add up </span>
+                    <img src="../images/d6-2.png" class="scoreDiceImg">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="scoreTwos" [(ngModel)]="score.twos" name="scoreTwos" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreThrees">Threes</label></td>
+                <td>
+                    <span class="valueSpan">Add up </span>
+                    <img src="../images/d6-3.png" class="scoreDiceImg">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="scoreThrees" [(ngModel)]="score.threes" name="scoreThrees" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreFours">Fours</label></td>
+                <td>
+                    <span class="valueSpan">Add up </span>
+                    <img src="../images/d6-4.png" class="scoreDiceImg">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="scoreFours" [(ngModel)]="score.fours" name="scoreFours" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreFives">Fives</label></td>
+                <td>
+                    <span class="valueSpan">Add up </span>
+                    <img src="../images/d6-5.png" class="scoreDiceImg">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="scoreFives" [(ngModel)]="score.fives" name="scoreFives" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreSixes">Sixes</label></td>
+                <td>
+                    <span class="valueSpan">Add up </span>
+                    <img src="../images/d6-6.png" class="scoreDiceImg">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="scoreSixes" [(ngModel)]="score.sixes" name="scoreSixes" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td>Subtotal</td>
+                <td></td>
+                <td>{{totals.topSubtotal}}</td>
+            </tr>
+            <tr>
+                <td>Bonus <span class="ruleSpan">(SubTot => 63)</span></td>
+                <td><span class="valueSpan">{{points.bonus.top}} points</span></td>
+                <td>{{score.topBonus}}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td>{{totals.topTotal}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="lowerScoreDiv">
+    <table id="lowerScoreTbl">
+        <colgroup>
+            <col class="labelCol"/>
+            <col class="valueCol"/>
+            <col class="scoreCol"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Right Section</th>
+                <th>Value</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="scoreThreeOAK">Three of a Kind</label></td>
+                <td><span class="valueSpan">Add all dice</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreThreeOAK" [(ngModel)]="score.threeOAK" name="scoreThreeOAK" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreFourOAK">4 of a Kind</label></td>
+                <td><span class="valueSpan">Add all dice</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreFourOAK" [(ngModel)]="score.fourOAK" name="scoreFourOAK" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreFullHouse">Full House</label></td>
+                <td><span class="valueSpan">{{points.fullHouse}} points</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreFullHouse" [(ngModel)]="score.fullHouse" name="scoreFullHouse" pattern="0|25">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreStraightSm">Sm. Straight (4)</label></td>
+                <td><span class="valueSpan">{{points.straightSm}} points</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreStraightSm" [(ngModel)]="score.straightSm" name="scoreStraightSm" pattern="0|30">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreStraightLg">Lg. Straight (5)</label></td>
+                <td><span class="valueSpan">{{points.straightLg}} points</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreStraightLg" [(ngModel)]="score.straightLg" name="scoreStraightLg" pattern="0|40">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreFiveOAK">5 of a Kind</label></td>
+                <td><span class="valueSpan">{{points.fiveOAK}} points</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreFiveOAK" [(ngModel)]="score.fiveOAK" name="scoreFiveOAK" pattern="0|50">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="scoreWild">Wild</label></td>
+                <td><span class="valueSpan">Add all dice</span></td>
+                <td>
+                    <input type="text" class="form-control" id="scoreWild" [(ngModel)]="score.wild" name="scoreWild" pattern="^[0-9]{1,2}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="score5OAKBonus">5 of a Kind Bonus</label></td>
+                <td><span class="valueSpan">{{points.bonus.fiveOAK}} points ea.</span></td>
+                <td>
+                    <input type="text" class="form-control" id="score5OAKBonus" [(ngModel)]="score.fiveOAKBonus" name="score5OAKBonus" pattern="0|100|200|300">
+                </td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td>{{totals.bottomTotal}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <h4><span class="grandTotalLabel">Grand Total Score:&nbsp;</span><span class="grandTotal">{{totals.grandTotal}}</span></h4>
+</div>
+<div id="calcDiv">
+    <button type="submit" id="calcBtn" class="btn btn-primary">Calculate Score</button>
+</div>
+</form>

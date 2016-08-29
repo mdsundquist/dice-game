@@ -1,0 +1,40 @@
+#appHeader, #appTitle, #newGameDiv, #diceDiv, #messagesDiv, #scorecardDiv {
+    text-align: center;
+}
+#appHeader {
+    margin-bottom: 10px;
+}
+#rollBtn {
+    display: block;
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    font-weight: bold;
+    font-size: 175%;
+    margin-bottom: 2px;
+}
+#newTurnBtn {
+    display: block;
+    width: 100px;
+    margin-top: 2px;
+}
+.turnBtnEnabled {
+    background-color: lightblue;
+}
+.turnBtnDisabled {
+    background-color: darkslategray;
+}
+dice-d6, #topBtnsDiv {
+    display: inline-block;
+    width: 100px;
+}
+dice-d6 {
+    width: 100px;
+}
+#ngImage, #appTitleText {
+    display: inline-block;
+    vertical-align: bottom;
+}
+#ngImage {
+    height: 60px;  
+}

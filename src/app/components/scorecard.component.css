@@ -1,0 +1,69 @@
+table {
+    width: 300px;
+}
+table, th, td {
+    border-collapse: collapse;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#rightFooter:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #909090;
+}
+#upperScoreTbl {
+    margin-right: 10px;
+}
+#lowerScoreTbl {
+    margin-left: 10px;
+}
+#lowerScoreDiv, #upperScoreDiv, .grandTotal {
+    display: inline-block;
+    /*text-align: center;*/
+}
+.grandTotalLabel {
+    color: green;
+    text-align: center;
+}
+.grandTotal {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+}
+.scoreDiceImg {
+    height: 15px;
+    width: 15px;
+    /*float: right;*/
+}
+.valueSpan {
+    font-size: 90%;
+}
+.ruleSpan {
+    font-size: 70%;
+}
+.form-control {
+    margin-left: 20px;
+    padding: 0px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+}
+label {
+    vertical-align: middle;
+    font-weight: normal;
+    height: 21px;
+    margin: 0px;
+    padding: 0px;
+}
+#labelCol {
+    width: 50%;
+}
+#valueCol, #scoreCol  {
+    width: 25%;
+}
+.ng-invalid {
+    border: 1px solid red;
+}

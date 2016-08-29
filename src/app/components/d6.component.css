@@ -1,0 +1,27 @@
+.canvas {
+    height: 100px;
+    width: 100px;
+}
+button {
+    width: 100px;
+    margin-top: 2px;
+    background-color: lightgray;
+
+}
+.held {
+    background-color: red;
+}
+.held:hover {
+    color: white;
+    font-weight: bold;
+}
+.notHeld {
+    background-color: lightgray;
+}
+.notHeld:hover {
+    color: red;
+    font-weight: bold;
+}
+.holdDisabled {
+    background-color: darkslategray;
+}
